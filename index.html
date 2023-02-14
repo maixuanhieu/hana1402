@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio autoplay="true" allow="autoplay" loop="true" id="audio_bg">
+        <source src="piano.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="happy-valentines">
+        <div class="valentines-day-card">
+          <div class="clouds"></div>
+          <div class="hearts">
+            <div class="heartOne">
+              <div class="left-side"></div>
+              <div class="right-side"></div>
+            </div>
+            <div class="heartTwo">
+              <div class="left-side"></div>
+              <div class="right-side"></div>
+            </div>
+                <div class="heartThree">
+              <div class="left-side"></div>
+              <div class="right-side"></div>
+            </div>
+             <div class="heartFour">
+              <div class="left-side"></div>
+              <div class="right-side"></div>
+            </div>
+             <div class="heartFive">
+             <div class="left-side"></div>
+              <div class="right-side"></div>
+            </div>
+          </div>
+          <div class="text"><span>Happy Valentine's</br> Day!</div>
+        </div>
+        <p class="hover">- hover over the text & click it -</p>
+        </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    var audioBg = document.getElementById("audio_bg");
+    $("body").on("click", ".control-audio .icon-control", function () {
+      $(".icon-control").fadeIn();
+
+      $(this).fadeOut();
+      if (audioBg.paused == false) {
+        pauseAudioBg();
+      } else {
+        playAudioBg();
+      }
+    });
+      $('body').on('click', '.happy-valentines', function () {
+    playAudioBg()
+          $('.icon-play').fadeOut();
+          $('.icon-pause').fadeIn();
+    });
+
+    function playAudioBg() {
+      audioBg.play();
+    }
+    function pauseAudioBg() {
+      audioBg.pause();
+    }
+  </script>
+</body>
+</html>
